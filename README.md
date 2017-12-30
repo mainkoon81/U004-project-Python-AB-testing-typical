@@ -99,6 +99,7 @@ plt.axvline(x=obs_diff, color='red');
 (null_vals > obs_diff).mean()
 ```
 It is 0.0044 so we reject H0.
+
 -------------------------------------------------------------------------------------------------------------------
 # [Case II]. More Career focused description of the course lead more success for both the website and the student ?
 
