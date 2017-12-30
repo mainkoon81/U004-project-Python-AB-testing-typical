@@ -111,11 +111,8 @@ __Data:__ In the Online Education Website, they made the second change that is a
 
 First, let's determine if the difference observed for each metric is statistically significant individually.
 
-<img src="https://user-images.githubusercontent.com/31917400/34457310-a8536276-eda4-11e7-956e-13b52bb8e6ea.jpg" width="700" height="180" />
-
 __Metric 1. Enrollment Rate__
-
-
+<img src="https://user-images.githubusercontent.com/31917400/34457690-073e2828-edb1-11e7-9a79-8077564d55a7.jpg" width="700" height="180" />
 
 
 
