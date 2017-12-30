@@ -123,7 +123,7 @@ __>Dataset B__
  - group: control / experiment
  - total_days
  - completed: True / False
-<img src="https://user-images.githubusercontent.com/31917400/34457690-073e2828-edb1-11e7-9a79-8077564d55a7.jpg" width="700" height="180" />
+<img src="https://user-images.githubusercontent.com/31917400/34457735-490642da-edb2-11e7-946c-d412204ec069.jpg" width="700" height="180" />
 
 ### *Let's determine if the difference observed for each metric is statistically significant individually.
 
