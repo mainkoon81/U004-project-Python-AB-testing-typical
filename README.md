@@ -81,19 +81,17 @@ for _ in range(10000):
     
 diffs = np.array(diffs)    
 ```
-Compute the upper C.I
+#### Simulating From the Null Hypothesis
+Simulate distribution under the null hypothesis
 ```
-upper = np.percentile(diffs, 95)
+null_vals = np.random.normal(0, diffs.std(), diffs.size)
 ```
-Plot sampling distribution
+Plot null distribution and line at our observed differece
 ```
-plt.hist(diffs)
-plt.axvline(x=upper, color='r', linewidth=2);
+plt.hist(null_vals)
+plt.axvline(x=obs_diff, color='red');
 ```
-<img src="https://user-images.githubusercontent.com/31917400/34457503-1a3cae1a-edaa-11e7-97c5-266b272e6642.jpg" width="600" height="300" />
-
-
-
+<img src="https://user-images.githubusercontent.com/31917400/34457559-45c6b4b6-edac-11e7-843b-0c4ba79d4204.jpg" width="400" height="180" />
 
 
 
