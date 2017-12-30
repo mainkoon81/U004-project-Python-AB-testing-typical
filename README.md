@@ -66,6 +66,19 @@ experiment_ctr = experiment_df.query('action == "click"').id.nunique() / experim
 ```
 obs_diff = experiment_ctr - control_ctr; obs_diff
 ```
+#### See if this difference is significant !
+BOOTSTRAPPING to simulate the sampling distribution for the difference in proportions - CTRs !
+```
+diffs = []
+
+for _ in range(10000):
+    b_samp = df.sample(df.shape[0], replace=True)
+    control_df = b_samp.query('group == "control"')
+    experiment_df = b_samp.query('group == "experiment"')
+    control_ctr = control_df.query('action == "click"').id.nunique() / control_df.query('action == "view"').id.nunique()
+    experiment_ctr = experiment_df.query('action == "click"').id.nunique() / experiment_df.query('action == "view"').id.nunique()
+    diffs.append(experiment_ctr - control_ctr)
+```
 
 
 
