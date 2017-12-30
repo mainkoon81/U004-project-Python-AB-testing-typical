@@ -4,7 +4,7 @@ __Case-01.__ More 'Click-Through-Rate' in the new website ? Does the experiment 
  - package: Pandas, Numpy, Matplotlib, Seaborn 
  - func:
 
-__Case-02.__ More Career focused description of the online-course lead more success for both the website and the student-customers ?
+__Case-02.__ More Career focused description of the course lead more success for both the website and the student ?
  - package: Pandas, Numpy, Matplotlib, Seaborn 
  - func:
 
@@ -66,8 +66,9 @@ experiment_ctr = experiment_df.query('action == "click"').id.nunique() / experim
 ```
 obs_diff = experiment_ctr - control_ctr; obs_diff
 ```
-#### See if this difference is significant !
- - BOOTSTRAPPING to simulate the sampling distribution for the difference in proportions - CTRs !
+#### See if this difference is significant!. 
+ - We are using 'Normal Dist of the Null' instead of 'C.I' because it's one-tailed. 
+ - First, BOOTSTRAPPING to simulate the sampling distribution for the difference in proportions - CTRs !
 ```
 diffs = []
 
@@ -93,9 +94,20 @@ plt.axvline(x=obs_diff, color='red');
 ```
 <img src="https://user-images.githubusercontent.com/31917400/34457559-45c6b4b6-edac-11e7-843b-0c4ba79d4204.jpg" width="400" height="180" />
 
+ - Compute p-value for (H0: diff <= 0) 
+``` 
+(null_vals > obs_diff).mean()
+```
+It is 0.0044 so we reject H0.
+-------------------------------------------------------------------------------------------------------------------
+# [Case II]. More Career focused description of the course lead more success for both the website and the student ?
 
-
-
+__Data:__ 
+ - timestamp
+ - id
+ - group: control / experiment
+ - action: view / click
+<img src="https://user-images.githubusercontent.com/31917400/34457310-a8536276-eda4-11e7-956e-13b52bb8e6ea.jpg" width="700" height="180" />
 
 
 
