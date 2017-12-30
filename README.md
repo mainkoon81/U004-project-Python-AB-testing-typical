@@ -41,17 +41,30 @@ df.timestamp.min(), df.timestamp.max()
 __Story:__
  - Definition of 'Click-Through-Rate' (CTR)
    - `The No.of unique visitors who click at least once / The No.of unique visitors who view the page` 
- - Why would we use 'Click-Through-Rate' instead of number of clicks to compare the performances of control and experiment pages? Because... Getting the proportion of the users who click is more effective than getting the number of users who click when comparing groups of different sizes. ie..more total clicks could occur in one version, even if there is a greater percentage of clicks in the other version (simpson's paradox).
+ - Why would we use 'Click-Through-Rate' instead of number of clicks to compare the performances of control and experiment pages? Because... Getting the proportion of the users who click is more effective than getting the number of users who click when comparing **groups of different sizes**. ie..more total clicks could occur in one version, even if there is a greater percentage of clicks in the other version (simpson's paradox).
  - Steps to analyze the results of this A/B test.
-   - 1. We computed the observed difference between the metric, click through rate, for the control and experiment group.
-   - 2. We simulated the sampling distribution for the difference in proportions (or difference in click through rates).
-   - 3. We used this sampling distribution to simulate the distribution under the null hypothesis, by creating a random normal distribution centered at 0 with the same spread and size.
+   - 1. We computed the observed difference between the metric, CTR, for the control and experiment group.
+   - 2. We simulated the sampling distribution for the difference in proportions (or difference in CTR).
+   - 3. We used this sampling distribution to **simulate the distribution under the null hypothesis**, by creating a random normal distribution centered at 0 with the same spread and size.
    - 4. We computed the p-value by finding the proportion of values in the null distribution that were greater than our observed difference.
    - 5. We used this p-value to determine the statistical significance of our observed difference.
 
 <img src="https://user-images.githubusercontent.com/31917400/34457350-2dadfb60-eda6-11e7-9a81-c1d784ad2263.jpg" />
 
+Extract all the actions from 'control' group + compute CTR
+```
+control_df = df.query('group == "control"')
 
+control_ctr = control_df.query('action == "click"').id.nunique() / control_df.query('action == "view"').id.nunique(); 
+control_ctr
+```
+Extract all the actions from 'experiment' group + compute CTR
+```
+experiment_df = df.query('group == "experiment"')
+
+experiment_ctr = experiment_df.query('action == "click"').id.nunique() / experiment_df.query('action == "view"').id.nunique();
+experiment_ctr 
+```
 
 
 
