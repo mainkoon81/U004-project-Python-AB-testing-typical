@@ -112,6 +112,11 @@ __Data:__ In the Online Education Website, they made the second change that is a
 First, let's determine if the difference observed for each metric is statistically significant individually.
 
 __Metric 1. Enrollment Rate__
+ - timestamp
+ - id
+ - group: control / experiment
+ - action: view / enroll
+ - duration
 <img src="https://user-images.githubusercontent.com/31917400/34457690-073e2828-edb1-11e7-9a79-8077564d55a7.jpg" width="700" height="180" />
 
 
