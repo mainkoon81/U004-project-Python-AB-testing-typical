@@ -51,19 +51,15 @@ __Story:__
 
 <img src="https://user-images.githubusercontent.com/31917400/34457350-2dadfb60-eda6-11e7-9a81-c1d784ad2263.jpg" />
 
-Extract all the actions from 'control' group + compute CTR
+Extract all the actions from 'control' group + compute CTR - 0.2797118847539016
 ```
 control_df = df.query('group == "control"')
-
 control_ctr = control_df.query('action == "click"').id.nunique() / control_df.query('action == "view"').id.nunique(); 
-control_ctr
 ```
-Extract all the actions from 'experiment' group + compute CTR
+Extract all the actions from 'experiment' group + compute CTR - 0.3097463284379172
 ```
 experiment_df = df.query('group == "experiment"')
-
-experiment_ctr = experiment_df.query('action == "click"').id.nunique() / experiment_df.query('action == "view"').id.nunique();
-experiment_ctr 
+experiment_ctr = experiment_df.query('action == "click"').id.nunique() / experiment_df.query('action == "view"').id.nunique(); 
 ```
 
 
