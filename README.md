@@ -62,7 +62,10 @@ experiment_df = df.query('group == "experiment"')
 experiment_ctr = experiment_df.query('action == "click"').id.nunique() / experiment_df.query('action == "view"').id.nunique(); 
 ```
 
-
+### Observed Difference in CTR - 0.030034443684015644
+```
+obs_diff = experiment_ctr - control_ctr; obs_diff
+```
 
 
 
