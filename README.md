@@ -80,9 +80,17 @@ for _ in range(10000):
     diffs.append(experiment_ctr - control_ctr)
     
 diffs = np.array(diffs)    
-plt.hist(diffs)
 ```
-
+Compute the upper C.I
+```
+upper = np.percentile(diffs, 95)
+```
+Plot sampling distribution
+```
+plt.hist(diffs)
+plt.axvline(x=upper, color='r', linewidth=2);
+```
+<img src="https://user-images.githubusercontent.com/31917400/34457503-1a3cae1a-edaa-11e7-97c5-266b272e6642.jpg" width="600" height="300" />
 
 
 
