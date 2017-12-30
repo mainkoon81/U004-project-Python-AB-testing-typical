@@ -101,14 +101,19 @@ plt.axvline(x=obs_diff, color='red');
 It is 0.0044 so we reject H0.
 
 -------------------------------------------------------------------------------------------------------------------
-# [Case II]. More Career focused description of the course lead more success for both the website and the student ?
+# [Case II]. Playing with metrics. More Career focused description of the course lead more success for both the website and the student ?
 
-__Data:__ 
- - timestamp
- - id
- - group: control / experiment
- - action: view / click
+__Data:__ In the Online Education Website, they made the second change that is a more career focused description(ad) on a course overview page in the hope that this change may encourage more users to enroll and complete this course. In this experiment, we’re going to analyze the following metrics:
+ - Enrollment Rate: Click through rate for the Enroll button the course overview page
+ - Average Reading Duration: Average number of seconds spent on the course overview page
+ - Average Classroom Time: Average number of days spent in the classroom for students enrolled in the course
+ - Completion Rate: Course completion rate for students enrolled in the course
+
+First, let's determine if the difference observed for each metric is statistically significant individually.
+
 <img src="https://user-images.githubusercontent.com/31917400/34457310-a8536276-eda4-11e7-956e-13b52bb8e6ea.jpg" width="700" height="180" />
+
+__Metric 1. Enrollment Rate__
 
 
 
