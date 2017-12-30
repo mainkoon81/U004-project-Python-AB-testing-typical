@@ -1,14 +1,14 @@
 # project-Python-04-A-B-testing
 
-__Case-01.__ More 'Click-Through-Rate' in the new website ? Does the experiment webpage drive higher traffic than the control webpage ? 
+__Case-I.__ More 'Click-Through-Rate' in the new website ? Does the experiment webpage drive higher traffic than the control webpage ? 
  - package: Pandas, Numpy, Matplotlib, Seaborn 
  - func:
 
-__Case-02.__ More Career focused description of the course lead more success for both the website and the student ?
+__Case-II.__ More Career focused description of the course lead more success for both the website and the student ?
  - package: Pandas, Numpy, Matplotlib, Seaborn 
  - func:
 
-__Case-03.__ 
+__Case-III.__ 
  - package: 
  - func: 
 -------------------------------------------------------------------------------------------------------------------------------------  
@@ -125,7 +125,7 @@ __>Dataset B__
  - completed: True / False
 <img src="https://user-images.githubusercontent.com/31917400/34457690-073e2828-edb1-11e7-9a79-8077564d55a7.jpg" width="700" height="180" />
 
-### Let's determine if the difference observed for each metric is statistically significant individually.
+### *Let's determine if the difference observed for each metric is statistically significant individually.
 
 __Metric 1. Enrollment Rate__
 
