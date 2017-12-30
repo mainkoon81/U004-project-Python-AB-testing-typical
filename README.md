@@ -39,7 +39,7 @@ df.timestamp.min(), df.timestamp.max()
 ```
 
 __Story:__
- - Definition of click through rate (CTR) for this experiment
+ - Definition of 'Click-Through-Rate' (CTR)
    - `The No.of unique visitors who click at least once / The No.of unique visitors who view the page` 
  - Why would we use 'Click-Through-Rate' instead of number of clicks to compare the performances of control and experiment pages? Because... Getting the proportion of the users who click is more effective than getting the number of users who click when comparing groups of different sizes. ie..more total clicks could occur in one version, even if there is a greater percentage of clicks in the other version (simpson's paradox).
  - Steps to analyze the results of this A/B test.
