@@ -78,6 +78,9 @@ for _ in range(10000):
     control_ctr = control_df.query('action == "click"').id.nunique() / control_df.query('action == "view"').id.nunique()
     experiment_ctr = experiment_df.query('action == "click"').id.nunique() / experiment_df.query('action == "view"').id.nunique()
     diffs.append(experiment_ctr - control_ctr)
+    
+diffs = np.array(diffs)    
+plt.hist(diffs)
 ```
 
 
