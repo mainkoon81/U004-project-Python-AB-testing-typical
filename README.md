@@ -109,15 +109,26 @@ __Data:__ In the Online Education Website, they made the second change that is a
  - Average Classroom Time: Average number of days spent in the classroom for students enrolled in the course
  - Completion Rate: Course completion rate for students enrolled in the course
 
-First, let's determine if the difference observed for each metric is statistically significant individually.
-
-__Metric 1. Enrollment Rate__
+__Dataset A__
  - timestamp
  - id
  - group: control / experiment
  - action: view / enroll
  - duration
 <img src="https://user-images.githubusercontent.com/31917400/34457690-073e2828-edb1-11e7-9a79-8077564d55a7.jpg" width="700" height="180" />
+
+__Dataset B__
+ - timestamp
+ - id
+ - group: control / experiment
+ - total_days
+ - completed: True / False
+<img src="https://user-images.githubusercontent.com/31917400/34457690-073e2828-edb1-11e7-9a79-8077564d55a7.jpg" width="700" height="180" />
+
+First, let's determine if the difference observed for each metric is statistically significant individually.
+
+__Metric 1. Enrollment Rate__
+
 
 
 
