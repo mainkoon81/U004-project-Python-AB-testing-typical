@@ -51,12 +51,12 @@ __Story:__
 
 <img src="https://user-images.githubusercontent.com/31917400/34457350-2dadfb60-eda6-11e7-9a81-c1d784ad2263.jpg" />
 
-Extract all the actions from 'control' group + compute CTR - 0.2797118847539016
+ - Extract all the actions from 'control' group + compute CTR - 0.2797118847539016
 ```
 control_df = df.query('group == "control"')
 control_ctr = control_df.query('action == "click"').id.nunique() / control_df.query('action == "view"').id.nunique(); 
 ```
-Extract all the actions from 'experiment' group + compute CTR - 0.3097463284379172
+ - Extract all the actions from 'experiment' group + compute CTR - 0.3097463284379172
 ```
 experiment_df = df.query('group == "experiment"')
 experiment_ctr = experiment_df.query('action == "click"').id.nunique() / experiment_df.query('action == "view"').id.nunique(); 
@@ -67,7 +67,7 @@ experiment_ctr = experiment_df.query('action == "click"').id.nunique() / experim
 obs_diff = experiment_ctr - control_ctr; obs_diff
 ```
 #### See if this difference is significant !
-BOOTSTRAPPING to simulate the sampling distribution for the difference in proportions - CTRs !
+ - BOOTSTRAPPING to simulate the sampling distribution for the difference in proportions - CTRs !
 ```
 diffs = []
 
@@ -82,11 +82,11 @@ for _ in range(10000):
 diffs = np.array(diffs)    
 ```
 #### Simulating From the Null Hypothesis
-Simulate distribution under the null hypothesis
+ - Simulate distribution under the null hypothesis
 ```
 null_vals = np.random.normal(0, diffs.std(), diffs.size)
 ```
-Plot null distribution and line at our observed differece
+ - Plot null distribution and line at our observed differece
 ```
 plt.hist(null_vals)
 plt.axvline(x=obs_diff, color='red');
