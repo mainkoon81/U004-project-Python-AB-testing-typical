@@ -12,7 +12,7 @@ __Case-03.__
  - package: 
  - func: 
 -------------------------------------------------------------------------------------------------------------------------------------  
-# Case I. 
+# Case I. Does the 'experiment' webpage drive higher traffic than the 'control' webpage ? Which one is better ? 
 
 __Data:__ 
  - timestamp
