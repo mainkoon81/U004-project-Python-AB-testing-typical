@@ -222,6 +222,58 @@ plt.axvline(obs_diff, c='red')
 
 Reject H0! The possibility of the No difference is 0.0321 ! so the difference is significant! With a type I error rate of 0.05, we have evidence that the average reading duration for this course increases when using the experimental description on its overview page. 
 
+__Metric 4. Completion Rate__
+```
+control_df = df.query('group == "control"')
+control_ctr = control_df.query('completed == True').id.nunique() / control_df.id.nunique()
+experiment_df = df.query('group == "experiment"')
+experiment_ctr = experiment_df.query('completed == True').id.nunique() / experiment_df.id.nunique()
+
+obs_diff = experiment_ctr - control_ctr
+
+diffs = []
+size = df.shape[0]
+for _ in range(10000):
+    b_samp = df.sample(size, replace=True)
+    control_df = b_samp.query('group == "control"')
+    experiment_df = b_samp.query('group == "experiment"')
+    control_ctr = control_df.query('completed == True').id.nunique() / control_df.id.nunique()
+    experiment_ctr = experiment_df.query('completed == True').id.nunique() / experiment_df.id.nunique()
+    diffs.append(experiment_ctr - control_ctr)
+
+diffs = np.array(diffs)
+null_vals = np.random.normal(0, diffs.std(), diffs.size)
+plt.hist(null_vals)
+plt.axvline(obs_diff, c='red')
+
+(null_vals > obs_diff).mean()
+```
+<img src="https://user-images.githubusercontent.com/31917400/34458369-8afbd46a-edc7-11e7-9ab7-beecfa8e9160.jpg" width="400" height="180" />
+
+Reject H0! The possibility of the No difference is 0.039 ! so the difference is significant! With a type I error rate of 0.05, we have evidence that the completion rate for this course increases when using the experimental description on its overview page. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
