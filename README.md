@@ -171,7 +171,7 @@ plt.axvline(obs_diff, c='red')
 ```
 (null_vals > obs_diff).mean()
 ```
-The possibility of the No difference is 0.022 ! so the difference is significant! With a type I error rate of 0.05, we have evidence that the enrollment rate for this course increases when using the experimental description on its overview page. 
+Reject H0! The possibility of the No difference is 0.022 ! so the difference is significant! With a type I error rate of 0.05, we have evidence that the enrollment rate for this course increases when using the experimental description on its overview page. 
 
 __Metric 2. Average Reading Duration__
 ```
@@ -195,7 +195,7 @@ plt.axvline(x=obs_diff, color='red')
 ```
 <img src="https://user-images.githubusercontent.com/31917400/34458339-a588f634-edc5-11e7-8102-aacad270467f.jpg" width="400" height="180" />
 
-The possibility of the No difference is 0.0 ! so the difference is significant! With a type I error rate of 0.05, we have evidence that the average reading duration for this course increases when using the experimental description on its overview page. 
+Reject H0! The possibility of the No difference is 0.0 ! so the difference is significant! With a type I error rate of 0.05, we have evidence that the average reading duration for this course increases when using the experimental description on its overview page. 
 
 __Metric 3. Average Classroom Time__
 ```
@@ -215,11 +215,12 @@ diffs = np.array(diffs)
 null_vals = np.random.normal(0, diffs.std(), diffs.size)
 plt.hist(null_vals)
 plt.axvline(obs_diff, c='red')
+
 (null_vals > obs_diff).mean()
 ```
-<img src="https://user-images.githubusercontent.com/31917400/34458339-a588f634-edc5-11e7-8102-aacad270467f.jpg" width="400" height="180" />
+<img src="https://user-images.githubusercontent.com/31917400/34458357-bbf1a500-edc6-11e7-8b92-42a78083b491.jpg" width="400" height="180" />
 
-The possibility of the No difference is 0.0 ! so the difference is significant! With a type I error rate of 0.05, we have evidence that the average reading duration for this course increases when using the experimental description on its overview page. 
+Reject H0! The possibility of the No difference is 0.0321 ! so the difference is significant! With a type I error rate of 0.05, we have evidence that the average reading duration for this course increases when using the experimental description on its overview page. 
 
 
 
