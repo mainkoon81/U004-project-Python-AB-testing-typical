@@ -167,21 +167,59 @@ plt.axvline(obs_diff, c='red')
 ```
 <img src="https://user-images.githubusercontent.com/31917400/34458275-c12b9a06-edc3-11e7-9d60-33cbca8937a2.jpg" width="400" height="180" />
 
- - Compute p-value - The possibility of the No difference is 0.022 ! so the difference is significant!
+ - Compute p-value 
 ```
 (null_vals > obs_diff).mean()
 ```
-With a type I error rate of 0.05, we have evidence that the enrollment rate for this course increases when using the 
-experimental description on its overview page. 
+The possibility of the No difference is 0.022 ! so the difference is significant! With a type I error rate of 0.05, we have evidence that the enrollment rate for this course increases when using the experimental description on its overview page. 
 
+__Metric 2. Average Reading Duration__
+```
+control_mean = df.query('group == "control"').duration.mean()
+experiment_mean = df.query('group == "experiment"').duration.mean()
+obs_diff = experiment_mean - control_mean
 
+diffs = []
+for _ in range(10000):
+    b_samp = df.sample(df.shape[0], replace=True)
+    control_mean = b_samp.query('group == "control"').duration.mean()
+    experiment_mean = b_samp.query('group == "experiment"').duration.mean()
+    diffs.append(experiment_mean - control_mean)
 
+diffs = np.array(diffs)
+null_vals = np.random.normal(0, diffs.std(), diffs.size)
+plt.hist(null_vals)
+plt.axvline(x=obs_diff, color='red')
 
+(null_vals > obs_diff).mean()
+```
+<img src="https://user-images.githubusercontent.com/31917400/34458339-a588f634-edc5-11e7-8102-aacad270467f.jpg" width="400" height="180" />
 
+The possibility of the No difference is 0.0 ! so the difference is significant! With a type I error rate of 0.05, we have evidence that the average reading duration for this course increases when using the experimental description on its overview page. 
 
+__Metric 3. Average Classroom Time__
+```
+control_mean = df.query('group == "control"').total_days.mean()
+experiment_mean = df.query('group == "experiment"').total_days.mean()
+obs_diff = experiment_mean - control_mean
 
+diffs = []
+size = df.shape[0]
+for _ in range(10000):
+    b_samp = df.sample(size, replace=True)
+    control_mean = b_samp.query('group == "control"').total_days.mean()
+    experiment_mean = b_samp.query('group == "experiment"').total_days.mean()
+    diffs.append(experiment_mean - control_mean)
 
+diffs = np.array(diffs)
+null_vals = np.random.normal(0, diffs.std(), diffs.size)
+plt.hist(null_vals)
+plt.axvline(obs_diff, c='red')
+(null_vals > obs_diff).mean()
+```
+<img src="https://user-images.githubusercontent.com/31917400/34458339-a588f634-edc5-11e7-8102-aacad270467f.jpg" width="400" height="180" />
 
+The possibility of the No difference is 0.0 ! so the difference is significant! With a type I error rate of 0.05, we have evidence that the average reading duration for this course increases when using the experimental description on its overview page. 
 
 
 
