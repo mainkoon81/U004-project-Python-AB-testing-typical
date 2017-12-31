@@ -252,10 +252,19 @@ plt.axvline(obs_diff, c='red')
 
 Reject H0! The possibility of the No difference is 0.039 ! so the difference is significant! With a type I error rate of 0.05, we have evidence that the completion rate for this course increases when using the experimental description on its overview page. 
 
-
-
-
-
+## Analyzing Multiple Metrics
+ - The more metrics you evaluate, the more likely you are to observe significant differences just by chance. Luckily, this multiple comparisons problem can be handled in several ways. The probability of any false Positive (alpha) increases as we increase the number of metrics - Bonferroni Correction
+ - Here are the p-values computed for the four metrics in this experiment
+   - 1.Enrollment Rate: 0.022
+   - 2.Average Reading Duration: 0
+   - 3.Average Classroom Time: 0.032
+   - 4.Completion Rate: 0.039 
+ - If our original alpha value was 0.05, Bonferroni corrected alpha value is 0.0125. so.. With the Bonferroni corrected alpha value, statistically significant metrics are...only Average Reading Duration. 
+ - Since the Bonferroni method is too conservative when we expect correlation among metrics, we can better approach this problem with more sophisticated methods, such as: the closed testing procedure, Boole-Bonferroni bound, the Holm-Bonferroni method.
+ 
+ 
+-------------------------------------------------------------------------------------------------------------------
+# [Case III]. 
 
 
 
