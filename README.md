@@ -261,7 +261,15 @@ Reject H0! The possibility of the No difference is 0.039 ! so the difference is 
    - 4.Completion Rate: 0.039 
  - If our original alpha value was 0.05, Bonferroni corrected alpha value is 0.0125. so.. With the Bonferroni corrected alpha value, statistically significant metrics are...only Average Reading Duration. 
  - Since the Bonferroni method is too conservative when we expect correlation among metrics, we can better approach this problem with more sophisticated methods, such as: the closed testing procedure, Boole-Bonferroni bound, the Holm-Bonferroni method.
- 
+
+## Note
+ - When designing an A/B test and drawing conclusions based on its results, there are some common ones to consider.
+   - Novelty effect and change aversion when existing users first experience a change
+   - Sufficient traffic and conversions to have significant and repeatable results
+   - Best metric choice for making the ultimate decision (eg. measuring revenue vs. clicks)
+   - Long enough run time for the experiment to account for changes in behavior based on time of day/week or seasonal events.
+   - Practical significance of a conversion rate (the cost of launching a new feature vs. the gain from the increase in conversion)
+   - Consistency among test subjects in the control and experiment group (imbalance in the population represented in each group can lead to situations like Simpson's Paradox)
  
 -------------------------------------------------------------------------------------------------------------------
 # [Case III]. 
