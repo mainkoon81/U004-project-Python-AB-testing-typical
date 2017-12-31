@@ -1,4 +1,4 @@
-# project-Python-04-A-B-testing
+# project-Python-04-AB-testing
 
 __Case-I.__ More 'Click-Through-Rate' in the new website ? Does the experiment webpage drive higher traffic than the control webpage ? 
  - package: Pandas, Numpy, Matplotlib, Seaborn 
@@ -7,10 +7,7 @@ __Case-I.__ More 'Click-Through-Rate' in the new website ? Does the experiment w
 __Case-II.__ More Career focused description of the course lead more success for both the website and the student ?
  - package: Pandas, Numpy, Matplotlib, Seaborn 
  - func:
-
-__Case-III.__ 
- - package: 
- - func: 
+ 
 -------------------------------------------------------------------------------------------------------------------------------------  
 # [Case I]. Does the 'experiment' webpage drive higher traffic than the 'control' webpage ? Which one is better ? 
 
@@ -271,32 +268,4 @@ Reject H0! The possibility of the No difference is 0.039 ! so the difference is 
    - Practical significance of a conversion rate (the cost of launching a new feature vs. the gain from the increase in conversion)
    - Consistency among test subjects in the control and experiment group (imbalance in the population represented in each group can lead to situations like Simpson's Paradox)
  
--------------------------------------------------------------------------------------------------------------------
-# [Case III]. 
-
-__Story:__ We want to understand the results of an A/B test run by an e-commerce website. Our goal is to work through this to help the company understand if they should implement the new page, keep the old page, or **perhaps run the experiment longer** to make their decision.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
