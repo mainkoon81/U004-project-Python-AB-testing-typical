@@ -128,9 +128,51 @@ __>Dataset B__
 ### *Let's determine if the difference observed for each metric is statistically significant individually.
 
 __Metric 1. Enrollment Rate__
+ - Compute 'Click-Through-Rate' for control group - 0.2364438839848676
+```
+control_df = df.query('group == "control"')
+control_ctr = control_df.query('action == "enroll"').id.nunique() / control_df.query('action == "view"').id.nunique()
+```
+ - Compute 'Click-Through-Rate' for experiment group - 0.2668693009118541
+```
+experiment_df = df.query('group == "experiment"')
+experiment_ctr = experiment_df.query('action == "enroll"').id.nunique() / experiment_df.query('action == "view"').id.nunique()
+```
+ - **Compute the observed difference in CTR** - 0.030425416926986526
+```
+obs_diff = experiment_ctr - control_ctr
+```
+ - Create a sampling distribution of the difference in proportions with bootstrapping
+```
+diffs = []
+for i in range(10000):
+    b_samp = df.sample(df.shape[0], replace =True)
+    ctrl_df = b_samp.query('group == "control"')
+    exp_df = b_samp.query('group == "experiment"')
+    ctrl_ctr = ctrl_df.query('action == "enroll"').id.nunique() / ctrl_df.query('action == "view"').id.nunique()
+    exp_ctr = exp_df.query('action == "enroll"').id.nunique() / exp_df.query('action == "view"').id.nunique()
+    diffs.append(exp_ctr - ctrl_ctr)
 
+diffs = np.array(diffs)
+diffs.shape, diffs.size, diffs.mean(), diffs.std()
+```
+ - Simulate distribution under the null hypothesis
+```
+null_vals = np.random.normal(0, diffs.std(), diffs.size)
+```
+ - Plot observed statistic with the null distibution
+```
+plt.hist(null_vals);
+plt.axvline(obs_diff, c='red')
+```
+<img src="https://user-images.githubusercontent.com/31917400/34458275-c12b9a06-edc3-11e7-9d60-33cbca8937a2.jpg" width="400" height="180" />
 
-
+ - Compute p-value - The possibility of the No difference is 0.022 ! so the difference is significant!
+```
+(null_vals > obs_diff).mean()
+```
+With a type I error rate of 0.05, we have evidence that the enrollment rate for this course increases when using the 
+experimental description on its overview page. 
 
 
 
