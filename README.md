@@ -256,7 +256,7 @@ Reject H0! The possibility of the No difference is 0.039 ! so the difference is 
    - 2.Average Reading Duration: 0
    - 3.Average Classroom Time: 0.032
    - 4.Completion Rate: 0.039 
- - If our original alpha value was 0.05, Bonferroni corrected alpha value is 0.0125. so.. With the Bonferroni corrected alpha value, statistically significant metrics are...only Average Reading Duration. 
+ - If our original alpha value was 0.05, Bonferroni corrected alpha value is 0.0125. so.. With the `Bonferroni corrected alpha value`, statistically significant metrics are...only Average Reading Duration. 
  - Since the Bonferroni method is too conservative when we expect correlation among metrics, we can better approach this problem with more sophisticated methods, such as: the closed testing procedure, Boole-Bonferroni bound, the Holm-Bonferroni method.
 
 ## Note
