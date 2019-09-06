@@ -1,4 +1,4 @@
-# project-Python-04-AB-testing
+# 04-AB-testing
 
 __Case-I.__ More 'Click-Through-Rate' in the new website ? Does the experiment webpage drive higher traffic than the control webpage ? 
  - package: Pandas, Numpy, Matplotlib, Seaborn 
